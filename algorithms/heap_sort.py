@@ -28,3 +28,10 @@ def restore_max_heap(heap: list, i: int):
     if max_idx != i:
         heap[i], heap[max_idx] = heap[max_idx], heap[i]
         restore_max_heap(heap, max_idx)
+
+
+def create_max_heap(arr: list):
+    heap_size = len(arr)
+    for i in reversed(range(1, int(len(arr) / 2 + 1))):
+        restore_max_heap(arr, i)
+    return arr, heap_size
