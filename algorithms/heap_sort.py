@@ -1,16 +1,30 @@
 """
 Overall aim is to keep syntax as simple as possible, the focus being the algorithms themselves,
-thus resisting the temptation to wrap up everything under a class.
+thus resisting the temptation to wrap up everything under a class and/or use @classmethod.
 """
 
 
-def parent(i: int):
+def parent_node(i: int):
     return int(i / 2)
 
 
-def left(i: int):
+def left_node(i: int):
     return int(2 * i)
 
 
-def right(i: int):
+def right_node(i: int):
     return int(2 * i + 1)
+
+
+def restore_max_heap(heap: list, i: int):
+    left = left_node(i)
+    right = right_node(i)
+    if left <= len(heap) and heap[left] > heap[right]:
+        max_idx = left
+    else:
+        max_idx = i
+    if right <= len(heap) and heap[right] > heap[max_idx]:
+        max_idx = right
+    if max_idx != i:
+        heap[i], heap[max_idx] = heap[max_idx], heap[i]
+        restore_max_heap(heap, max_idx)
