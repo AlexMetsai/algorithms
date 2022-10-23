@@ -36,14 +36,3 @@ def heap_sort(arr: list):
     for i in reversed(range(len(arr))):
         arr[0], arr[i] = arr[i], arr[0]
         restore_max_heap(arr, 0, i)
-
-
-if __name__ == "__main__":
-    from algorithms.utils.data_generation import get_whole_number_array
-    retries = 10
-    success = 0
-    for test_i in range(retries):
-        test_arr = get_whole_number_array()
-        heap_sort(test_arr)
-        success += int(test_arr == sorted(test_arr))
-    print(f"Heap sort: {success}/{retries} tests successful")
