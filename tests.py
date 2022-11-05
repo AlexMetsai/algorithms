@@ -3,6 +3,7 @@ Test and benchmark sorting algorithms.
 """
 from algorithms.heap_sort import heap_sort
 from algorithms.quicksort import quicksort
+from algorithms.insertion_sort import insertion_sort
 from algorithms.utils.data_generation import get_whole_number_array
 
 
@@ -16,6 +17,6 @@ def evaluate(alg, retries=10):
 
 
 if __name__ == "__main__":
-    sorting_algorithms = [heap_sort, quicksort]
+    sorting_algorithms = [heap_sort, quicksort, insertion_sort]
     for alg in sorting_algorithms:
         evaluate(alg)
