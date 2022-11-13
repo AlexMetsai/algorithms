@@ -2,7 +2,6 @@
 Quicksort algorithm.
 """
 
-
 def divide(arr: list, p: int, r: int):
     """
     Rearrange a (part of a larger) array, arr[p..r], into two arrays arr[p..q-1] and arr[q+1..r],

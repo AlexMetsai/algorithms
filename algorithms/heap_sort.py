@@ -3,7 +3,6 @@ Overall aim is to keep syntax as simple as possible, the focus being the algorit
 thus resisting the temptation to wrap up everything under a class with @classmethod.
 """
 
-
 def left_node(i: int):
     return 2 * i + 1
 
