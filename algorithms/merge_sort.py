@@ -1,14 +1,6 @@
 """
 Merge sort algorithm.
-
-1. split into two parts
-2. merge_sort(part 1)
-3. merge_sort(part 2)
-4. merge(part1, part2)
-
-Obviously the core logic is about the merging logic.
 """
-
 
 def merge(arr: list, p: int, q: int, r: int):
     n1 = q - p + 1

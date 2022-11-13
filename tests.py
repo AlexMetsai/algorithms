@@ -1,8 +1,10 @@
 """
 Test and benchmark sorting algorithms.
 """
+
 from algorithms.heap_sort import heap_sort
 from algorithms.quicksort import quicksort
+from algorithms.merge_sort import merge_sort
 from algorithms.insertion_sort import insertion_sort
 from algorithms.utils.data_generation import get_whole_number_array
 
@@ -17,6 +19,6 @@ def evaluate(alg, retries=10):
 
 
 if __name__ == "__main__":
-    sorting_algorithms = [heap_sort, quicksort, insertion_sort]
+    sorting_algorithms = [heap_sort, quicksort, merge_sort, insertion_sort]
     for alg in sorting_algorithms:
         evaluate(alg)

@@ -2,7 +2,6 @@
 Insertion sort algorithm.
 """
 
-
 def insertion_sort(arr: list):
     for j in range(1, len(arr)):
         key = arr[j]
