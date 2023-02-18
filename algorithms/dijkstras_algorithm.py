@@ -1,3 +1,9 @@
+"""
+Dijkstra's Algorithm
+
+Looking at a visual example of the algorithm will assist in understanding it.
+"""
+
 from typing import List
 
 
