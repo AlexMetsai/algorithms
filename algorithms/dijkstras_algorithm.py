@@ -15,7 +15,7 @@ class Graph:
 def dummy_adj_matrix():
     """
     A quick example I created, maybe I should look into something
-    more focused for testing.
+    more focused for testing, which has been manual so far.
     """
     adjacent_matrix = [
         [0, 4, 5, 0, 0,],
@@ -24,6 +24,11 @@ def dummy_adj_matrix():
         [0, 3, 9, 0, 1,],
         [0, 9, 0, 1, 0,]
     ]
+    adjacent_matrix = [
+        [float("inf") if i == 0 else i for i in row]
+        for row in adjacent_matrix
+    ]
+    return adjacent_matrix
 
 
 if __name__ == "__main__":
