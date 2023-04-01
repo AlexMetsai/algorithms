@@ -50,11 +50,11 @@ def dummy_adj_matrix():
     more focused for testing, which has been manual so far.
     """
     adjacent_matrix = [
-        [0, 4, 5, 0, 0,],
-        [4, 0, 0, 3, 9,],
-        [5, 0, 0, 9, 0,],
-        [0, 3, 9, 0, 1,],
-        [0, 9, 0, 1, 0,]
+        [0, 4, 5, 0, 0],
+        [4, 0, 0, 3, 9],
+        [5, 0, 0, 9, 0],
+        [0, 3, 9, 0, 1],
+        [0, 9, 0, 1, 0]
     ]
     adjacent_matrix = [
         [float("inf") if i == 0 else i for i in row]
