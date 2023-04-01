@@ -12,6 +12,38 @@ class Graph:
         self.num_vertices = len(adjacent_matrix)
         self.graph = adjacent_matrix
 
+
+def dijkstras_algorithm(g: Graph, start: int, end: int):
+
+    dist = {v: float("inf") for v in range(g.num_vertices)}
+    prev = {v: None for v in range(g.num_vertices)}
+    dist[start] = 0
+
+    queue = list(range(g.num_vertices))
+
+    # Find distances from start.
+    while queue:
+        queue_dist = {k: v for k, v in dist.items() if k in queue}
+        min_dist_vertex = min(queue_dist, key=queue_dist.get)
+        queue.remove(min_dist_vertex)
+
+        for v in queue:
+            dist_temp = dist[min_dist_vertex] + g.graph[min_dist_vertex][v]
+            if dist_temp < dist[v]:
+                dist[v] = dist_temp
+                prev[v] = min_dist_vertex
+
+    # Find shortest path.
+    seq = []
+    min_dist_vertex = end
+    if prev[min_dist_vertex] is not None or min_dist_vertex == start:
+        while min_dist_vertex is not None:
+            seq.insert(0, min_dist_vertex)
+            min_dist_vertex = prev[min_dist_vertex]
+
+    return seq
+
+
 def dummy_adj_matrix():
     """
     A quick example I created, maybe I should look into something
@@ -32,4 +64,6 @@ def dummy_adj_matrix():
 
 
 if __name__ == "__main__":
-    ...
+    g = Graph(dummy_adj_matrix())
+    res = dijkstras_algorithm(g, start=0, end=3)
+    print(res)
